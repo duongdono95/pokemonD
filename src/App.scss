@@ -1,0 +1,21 @@
+.pokemons__container {
+    text-align: center;
+    h1 {
+        margin: 20px auto 30px auto;
+    }
+    .load_more_btn {
+        margin: 30px auto;
+        font-size: 20px;
+        font-weight: 700;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 50px;
+        background-color: white;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.428);
+        color: #333;
+    }
+    .load_more_btn:hover {
+        background-color: #0d2830;
+        color: white;
+    }
+}
