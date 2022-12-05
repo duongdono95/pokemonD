@@ -1,7 +1,18 @@
+.App {
+    position: relative;
+    .modal {
+        position: absolute;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.2);
+        backdrop-filter: blur(10px);
+    }
+}
 .pokemons__container {
     text-align: center;
     h1 {
-        margin: 20px auto 30px auto;
+        padding-top: 30px;
+        margin: 0 auto 30px auto;
     }
     .load_more_btn {
         margin: 30px auto;
