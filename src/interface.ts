@@ -5,9 +5,23 @@ export interface PokemonUrl {
 export interface PokeDetails {
   name : string;
   id : number;
+  base_experience: number;
+  weight: number;
+  height : number;
   abilities :{
-    ability:string;
-    name:string;
-    base_experience: number;
-  }[]
+    ability:{
+      name:string;
+    }
+  }[];
+  types : {
+    type: {
+      name: string;
+    }
+  }[];
+  stats : {
+    base_stat: number;
+    stat : {
+      name: string;
+    }
+  }[];
 }
