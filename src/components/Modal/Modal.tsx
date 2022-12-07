@@ -12,8 +12,8 @@ const Modal:React.FC<Props> = (props) => {
   return (
     <div className="modal">
           <div className="modal__container">
-            <div className="escape__btn">
-              <i className="fa-solid fa-x" onClick={props.handleQuitRequest}></i>
+            <div className="escape__btn" onClick={props.handleQuitRequest}>
+              <i className="fa-solid fa-x" ></i>
             </div>
             <h1>{data.id} - {data.name.toUpperCase()}  </h1>
             <div className="img__container">

@@ -1,0 +1,21 @@
+.search__bar__container {
+    display: flex;
+    align-items: center;
+}
+
+#search__bar {
+    max-width: 40%;
+    min-width: 300px;
+    width: 100%;
+    padding: 15px 30px;
+    font-size: 18px;
+    border-radius: 50px;
+    border: none;
+    opacity: 50%;
+    margin: 0 auto;
+}
+#search__bar:focus {
+    outline: none;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    opacity: 100%;
+}

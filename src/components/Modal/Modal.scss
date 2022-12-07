@@ -1,0 +1,107 @@
+.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.modal__container {
+    position: relative;
+    min-width: 40vw;
+    max-width: 500px;
+    background-color: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(2px);
+    border: 4px solid white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+    border-radius: 20px;
+    .escape__btn {
+        position: absolute;
+        top: -2%;
+        left: 95%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #333;
+        background-color: white;
+        width: 50px;
+        height: 50px;
+        border-radius: 50px;
+        font-size: 20px;
+        border: 3px solid transparent;
+        opacity: 70%;
+    }
+    .escape__btn:hover {
+        opacity: 100%;
+        box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+        background-color: white;
+    }
+    .img__container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 2%;
+    }
+    .img__card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        p {
+            margin: 15px auto;
+            font-size: 20px;
+            font-weight: 500;
+        }
+        img {
+            max-width: 200px;
+            width: 100%;
+        }
+    }
+    .modal__item {
+        background-color: rgba(255, 255, 255, 0.2);
+        padding: 15px 15px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        h3 {
+            width: 40%;
+        }
+    }
+    .details__group {
+        display: flex;
+        flex-grow: 1;
+        justify-content: flex-end;
+        flex-wrap: wrap;
+        p {
+            font-size: 16px;
+            min-width: 10%;
+        }
+    }
+    .stat__group {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        .stat__detail {
+            justify-content: flex-end;
+            flex-grow: 1;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin: 5px auto;
+            h5 {
+                min-width: 130px;
+            }
+        }
+    }
+}
