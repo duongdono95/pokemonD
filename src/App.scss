@@ -94,8 +94,29 @@
         }
     }
 }
-.pokemons__container {
+.wrapper {
     text-align: center;
+    .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+    }
+    #search__bar {
+        max-width: 40%;
+        min-width: 300px;
+        width: 100%;
+        padding: 15px 30px;
+        font-size: 18px;
+        border-radius: 50px;
+        border: none;
+        opacity: 50%;
+    }
+    #search__bar:focus {
+        outline: none;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+        opacity: 100%;
+    }
     h1 {
         padding-top: 30px;
         margin: 0 auto 30px auto;

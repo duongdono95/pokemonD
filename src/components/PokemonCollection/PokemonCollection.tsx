@@ -1,5 +1,5 @@
 import React from 'react'
-import { PokemonUrl } from '../interface'
+import { PokemonUrl } from '../../interface'
 import './PokemonCollection.scss'
 interface Props {
   data: PokemonUrl[];
