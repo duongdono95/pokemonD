@@ -8,6 +8,7 @@ import SearchBar from "./components/SearchBar/SearchBar";
 
 function App() {
   const [pokemons, setPokemons] = useState<PokemonUrl[]>([])
+  const [pokeNames, setPokeNames] = useState<string[]>([])
   const [renderingPokemons, setRenderingPokemons] = useState<PokemonUrl[]>([])
   const [modal, setModal] = useState<Boolean>(false)
   const [modalData, setModalData] = useState<PokeDetails|undefined>()
@@ -17,6 +18,7 @@ function App() {
       const res = await axios.get('https://pokeapi.co/api/v2/pokemon?limit=1154')
       res.data.results.forEach((poke:PokemonUrl) => {
         setPokemons((p)=> [...p, poke])
+        setPokeNames((p)=> [...p, poke.name])
       })
     }
     getPokemons()
@@ -55,7 +57,7 @@ function App() {
         <Modal data={modalData} handleQuitRequest={hideModal}/>
         )}
       <h1>Pokedex</h1>
-      {showSearchBar && <SearchBar />}
+      {showSearchBar && <SearchBar pokeNames={pokeNames} />}
       <div className="wrapper">
         <div className="container">
           <PokemonCollection handleRequest={viewPokeData} data={renderingPokemons} />
