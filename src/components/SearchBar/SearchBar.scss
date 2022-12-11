@@ -15,7 +15,7 @@
     margin: 0 auto;
 }
 #search__bar:focus {
-    outline: none;
+    outline: 1px solid rgba(0, 0, 0, 0.1);
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
     opacity: 100%;
 }

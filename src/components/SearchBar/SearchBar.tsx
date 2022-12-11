@@ -3,7 +3,8 @@ import './SearchBar.scss';
 import { useState,useEffect,  useRef } from "react";
 import HeadlessTippy from '@tippyjs/react/headless';
 import { useDebounce } from "../../hooks/Debounce";
-import { PokemonUrl } from '../../interface'
+import SearchResults from "../SearchResults/SearchResults";
+
 
 interface Props {
   pokeNames: string[]
@@ -24,37 +25,37 @@ const SearchBar:React.FC<Props> = (props) => {
       setSearchResult([]);
       return;
     }
-    const searchPoke = (searchValue:string) => {
-      const match = props.pokeNames.filter((pokeName) => {
-        if (pokeName.includes(searchValue)){
+    const searchingPokes = () => {
+      const matchedPokemons = props.pokeNames.filter((pokeName) => {
+        if (pokeName.includes(debouncedValue)) {
           return true
         }
       })
-      console.log(match)
+      matchedPokemons.forEach((poke) => {
+        setSearchResult((p)=>[...p , poke])
+      })
     }
 
-  },[debouncedValue])
-
-
-
+    searchingPokes()
+  },[debouncedValue, props.pokeNames])
   const handleChange = (e?:any) => {
     const searchValue = e?.target.value;
     if (!searchValue.startsWith(' ')) {
       setSearchValue(searchValue)
     }
-    searchPoke(searchValue)
   }
+
   return (
     <div className="search__bar__container">
       <HeadlessTippy
         interactive
+        visible={showResult && searchResult.length > 0 }
         // add rendering conditions to avoid showing search results when the input is empty
         render={(attrs) => (
           <div className="search__results" tabIndex={1} {...attrs}>
-
+            <SearchResults data={searchResult} />
           </div>
         )}
-        visible={showResult && searchResult.length > 0}
       >
         <div className="search__bar">
           <input  type="text" id="search__bar"
@@ -62,6 +63,7 @@ const SearchBar:React.FC<Props> = (props) => {
                   value={searchValue}
                   spellCheck={false}
                   onChange={handleChange}
+                  onFocus={() => {setShowResult(true)}}
                   />
         </div>
       </HeadlessTippy>
